@@ -3,12 +3,14 @@ const connectDB = require('./connectDB');
 require('dotenv').config();
 const router=require('./routes/index.routes');
 const bodyParser=require('body-parser');
+const cors=require('cors');
 
 const app = express();
 const PORT=process.env.PORT;
 
 app.use(express.json());
 app.use(bodyParser());
+app.use(cors())
 
 app.use('/api/v1',router);
 

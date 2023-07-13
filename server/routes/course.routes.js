@@ -35,7 +35,7 @@ router.put('/admin/courses/:courseId', checkAuthAdmin, async (req, res) => {
     }
 });
 
-router.get('/admin/courses', checkAuthAdmin, async (req, res) => {
+router.get('/admin/courses', async (req, res) => {
     try {
         const courses = await Course.find();
         return res.send({courses});
